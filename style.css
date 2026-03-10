@@ -150,6 +150,13 @@ main {
     text-shadow: 0 2px 4px rgba(0,0,0,0.8);
 }
 
+#qr-image {
+    max-height: 180px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    margin: 0 auto;
+}
+
 #board {
     display: grid;
     grid-template-columns: 1fr 1fr;

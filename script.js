@@ -72,6 +72,7 @@ const elTeam1Score = document.getElementById('team1-score');
 const elTeam2Score = document.getElementById('team2-score');
 const elPotScore = document.getElementById('pot-score');
 const elQuestionText = document.getElementById('question-text');
+const elQrImage = document.getElementById('qr-image');
 const elBoard = document.getElementById('board');
 const elStrikeOverlay = document.getElementById('strike-overlay');
 const elStrikeContainer = document.getElementById('strike-container');
@@ -112,6 +113,7 @@ function initGame() {
 function loadQuestionData(q) {
     elQuestionText.innerText = q.question;
     elQuestionText.classList.add('hidden'); // Yeni soru geldiğinde gizle
+    if (elQrImage) elQrImage.classList.remove('hidden'); // QR'ı göster
     isQuestionVisible = false;
     btnToggleQuestion.innerText = "Soruyu Göster";
 
@@ -229,9 +231,11 @@ function toggleQuestion() {
     isQuestionVisible = !isQuestionVisible;
     if (isQuestionVisible) {
         elQuestionText.classList.remove('hidden');
+        if (elQrImage) elQrImage.classList.add('hidden');
         btnToggleQuestion.innerText = "Soruyu Gizle";
     } else {
         elQuestionText.classList.add('hidden');
+        if (elQrImage) elQrImage.classList.remove('hidden');
         btnToggleQuestion.innerText = "Soruyu Göster";
     }
 }
