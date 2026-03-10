@@ -445,7 +445,7 @@ button.warning {
 
 .intro-circle-svg {
     position: absolute;
-    top: 50%;
+    top: calc(50% + 60px); /* Bütün animasyon grubunu senkronize aşağı kaydırmak için */
     left: 50%;
     transform: translate(-50%, -50%) rotate(-90deg) scale(2.0);
     /* Çember SVG olarak logonun etrafını saracak şekilde daha da büyütüldü */
@@ -508,7 +508,7 @@ button.warning {
 
 .intro-logo {
     position: absolute;
-    top: 50%;
+    top: calc(50% + 60px); /* Bütün animasyon grubunu senkronize aşağı kaydırmak için */
     left: 35%;
     /* Logoya (sağda) yer açmak için QR kodu biraz sola aldık */
     transform: translate(-50%, -50%);
@@ -547,7 +547,7 @@ button.warning {
     width: 450px;
     /* Logo iyice büyütüldü */
     height: 450px;
-    top: 50%;
+    top: calc(50% + 60px); /* Bütün animasyon grubunu senkronize aşağı kaydırmak için */
     left: 50%;
     transform: translate(100vw, -50%);
     animation: dragonEnter 3s ease-out 0.5s forwards, dragonFloat 2.5s ease-in-out 3.5s infinite alternate;
