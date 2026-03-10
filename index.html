@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aileler Yarışıyor</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Header: Scores -->
+        <header id="scoreboard">
+            <div class="team-score" id="team1-score-container">
+                <h2 id="team1-name" contenteditable="true" title="İsmi değiştirmek için tıklayın">A Takımı</h2>
+                <div class="score" id="team1-score">0</div>
+            </div>
+            
+            <div class="pot-container">
+                <div class="ramadan-badge">🌙 Ramazan Özel ✨</div>
+                <h2>ORTAK KASA</h2>
+                <div class="score pot" id="pot-score">0</div>
+            </div>
+
+            <div class="team-score" id="team2-score-container">
+                <h2 id="team2-name" contenteditable="true" title="İsmi değiştirmek için tıklayın">B Takımı</h2>
+                <div class="score" id="team2-score">0</div>
+            </div>
+        </header>
+
+        <!-- Main Game Area -->
+        <main>
+            <div id="question-container">
+                <h1 id="question-text">Soru Yükleniyor...</h1>
+            </div>
+
+            <div id="board">
+                <!-- Answers will be dynamically injected here -->
+            </div>
+        </main>
+
+        <!-- Modertator Controls (Hover to reveal at the bottom) -->
+        <footer id="controls" class="moderator-panel">
+            <div class="controls-wrapper">
+                <h3>Moderatör Kontrolleri</h3>
+                <div class="buttons-row">
+                    <button id="btn-toggle-question" class="next">Soruyu Göster</button>
+                    <button id="btn-strike" class="danger">❌ Çarpı Ver (X)</button>
+                    <button id="btn-award-team1" class="award">KASAYI TAKIM 1'E AKTAR</button>
+                    <button id="btn-award-team2" class="award">KASAYI TAKIM 2'YE AKTAR</button>
+                    <button id="btn-next-question" class="next">Sonraki Soru ➡️</button>
+                    <button id="btn-clear-strikes" class="warning">Çarpıları Sıfırla</button>
+                </div>
+                <p class="help-text">Kısayollar: [1, 2, 3] = Çarpı Göster | [Boşluk] = Kapat/Aç | [N] = Sonraki Soru | [Q] = Soruyu Göster/Gizle | [TAB] = Paneli Gizle/Göster</p>
+            </div>
+        </footer>
+
+        <!-- Strike Overlay -->
+        <div id="strike-overlay" class="hidden">
+            <div id="strike-container"></div>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
