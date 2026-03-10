@@ -151,10 +151,13 @@ main {
 }
 
 #qr-image {
-    max-height: 180px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    max-height: 400px;
+    width: auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.7);
     margin: 0 auto;
+    background-color: white; /* Tarayıcıların rahat okuması için */
+    padding: 15px;
 }
 
 #board {
