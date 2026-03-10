@@ -84,7 +84,9 @@ const btnAwardTeam1 = document.getElementById('btn-award-team1');
 const btnAwardTeam2 = document.getElementById('btn-award-team2');
 const btnClearStrikes = document.getElementById('btn-clear-strikes');
 const btnToggleQuestion = document.getElementById('btn-toggle-question');
+const btnEnd = document.getElementById('btn-end');
 const elControlsPanel = document.getElementById('controls');
+const elEndOverlay = document.getElementById('end-overlay');
 
 
 // --- Initialization ---
@@ -248,12 +250,18 @@ function nextQuestion() {
     elBoard.innerHTML = "Lütfen moderatörün yeni sorusu beklenirken bekleyiniz...";
 }
 
+function showEndAnimation() {
+    elEndOverlay.classList.remove('hidden');
+    playWinSound(); // Animasyon sırasında güzel bir ses çalalım
+}
+
 // --- Event Listeners ---
 function setupEventListeners() {
     btnNextQuestion.addEventListener('click', nextQuestion);
     btnStrike.addEventListener('click', addStrike);
     btnClearStrikes.addEventListener('click', resetStrikes);
     btnToggleQuestion.addEventListener('click', toggleQuestion);
+    btnEnd.addEventListener('click', showEndAnimation);
 
     btnAwardTeam1.addEventListener('click', () => awardPotTo(1));
     btnAwardTeam2.addEventListener('click', () => awardPotTo(2));
