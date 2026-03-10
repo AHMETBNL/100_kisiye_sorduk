@@ -31,7 +31,10 @@ body {
 body::before {
     content: '';
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-image: radial-gradient(rgba(255, 255, 255, 0.4) 1px, transparent 1px);
     background-size: 80px 80px;
     background-position: 0 0, 40px 40px;
@@ -60,7 +63,8 @@ body::before {
     backdrop-filter: blur(10px);
 }
 
-.team-score, .pot-container {
+.team-score,
+.pot-container {
     text-align: center;
 }
 
@@ -76,14 +80,15 @@ body::before {
     transition: all 0.3s;
 }
 
-.team-score h2:focus, .team-score h2:hover {
+.team-score h2:focus,
+.team-score h2:hover {
     border-bottom: 2px dashed var(--text-dim);
 }
 
 .score {
     font-size: 5rem;
     font-weight: 900;
-    text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     background: linear-gradient(180deg, #ffffff 0%, #aab8c2 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -112,8 +117,15 @@ body::before {
 }
 
 @keyframes pulseGlow {
-    from { opacity: 0.8; transform: scale(0.98); }
-    to { opacity: 1; transform: scale(1.02); }
+    from {
+        opacity: 0.8;
+        transform: scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.02);
+    }
 }
 
 .score.pot {
@@ -147,17 +159,20 @@ main {
     font-size: 2.5rem;
     font-weight: 700;
     line-height: 1.3;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 #qr-image {
-    max-height: 400px;
+    height: 65vh; /* Ekran yüksekliğinin %65'ini kaplayacak şekilde ayarlandı */
     width: auto;
-    border-radius: 15px;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.7);
+    max-width: 100%; /* Çok dar ekranlarda dışarı taşmayı önler */
+    object-fit: contain;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
     margin: 0 auto;
-    background-color: white; /* Tarayıcıların rahat okuması için */
-    padding: 15px;
+    background-color: white;
+    /* Tarayıcıların rahat okuması için */
+    padding: 2.5vh;
 }
 
 #board {
@@ -190,7 +205,8 @@ main {
     transform: rotateX(180deg);
 }
 
-.flip-front, .flip-back {
+.flip-front,
+.flip-back {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -200,7 +216,7 @@ main {
     align-items: center;
     border-radius: 10px;
     border: 3px solid #3a506b;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     background: linear-gradient(135deg, #1c2541, #0b132b);
 }
 
@@ -245,7 +261,7 @@ main {
     font-size: 2.5rem;
     font-weight: 900;
     color: var(--accent-yellow);
-    background: rgba(0,0,0,0.3);
+    background: rgba(0, 0, 0, 0.3);
     padding: 0.5rem 1.5rem;
     border-radius: 8px;
     min-width: 100px;
@@ -294,9 +310,20 @@ main {
 }
 
 @keyframes stamp {
-    0% { transform: scale(3); opacity: 0; }
-    50% { transform: scale(0.8); opacity: 1; }
-    100% { transform: scale(1); opacity: 1; }
+    0% {
+        transform: scale(3);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(0.8);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 /* Moderator Panel */
@@ -357,10 +384,24 @@ button:active {
     transform: translateY(0);
 }
 
-button.danger { background: var(--accent-red); }
-button.award { background: var(--accent-green); color: #000; }
-button.next { background: var(--text-dim); color: #000; }
-button.warning { background: var(--accent-yellow); color: #000; }
+button.danger {
+    background: var(--accent-red);
+}
+
+button.award {
+    background: var(--accent-green);
+    color: #000;
+}
+
+button.next {
+    background: var(--text-dim);
+    color: #000;
+}
+
+button.warning {
+    background: var(--accent-yellow);
+    color: #000;
+}
 
 .help-text {
     font-size: 0.8rem;
