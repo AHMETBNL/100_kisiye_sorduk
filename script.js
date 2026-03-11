@@ -176,11 +176,6 @@ function addToPot(points) {
     updateScoreUI(elPotScore, potScore);
 }
 
-function resetPot() {
-    potScore = 0;
-    updateScoreUI(elPotScore, 0);
-}
-
 function awardPotTo(team) {
     if (potScore === 0) return;
 
@@ -249,18 +244,26 @@ function nextQuestion() {
     elBoard.innerHTML = "Lütfen moderatörün yeni sorusu beklenirken bekleyiniz...";
 }
 
-
+function resetPot() {
+    console.log("Kasa sıfırlanıyor...");
+    potScore = 0;
+    if (elPotScore) {
+        updateScoreUI(elPotScore, 0);
+    }
+}
 
 // --- Event Listeners ---
 function setupEventListeners() {
-    btnNextQuestion.addEventListener('click', nextQuestion);
-    btnStrike.addEventListener('click', addStrike);
-    btnClearStrikes.addEventListener('click', resetStrikes);
-    btnToggleQuestion.addEventListener('click', toggleQuestion);
-    btnResetPot.addEventListener('click', resetPot);
+    if (btnNextQuestion) btnNextQuestion.addEventListener('click', nextQuestion);
+    if (btnStrike) btnStrike.addEventListener('click', addStrike);
+    if (btnClearStrikes) btnClearStrikes.addEventListener('click', resetStrikes);
+    if (btnToggleQuestion) btnToggleQuestion.addEventListener('click', toggleQuestion);
+    if (btnResetPot) btnResetPot.addEventListener('click', () => {
+        resetPot();
+    });
 
-    btnAwardTeam1.addEventListener('click', () => awardPotTo(1));
-    btnAwardTeam2.addEventListener('click', () => awardPotTo(2));
+    if (btnAwardTeam1) btnAwardTeam1.addEventListener('click', () => awardPotTo(1));
+    if (btnAwardTeam2) btnAwardTeam2.addEventListener('click', () => awardPotTo(2));
 
     // Keyboard Shortcuts
     document.addEventListener('keydown', (e) => {
@@ -287,6 +290,9 @@ function setupEventListeners() {
                 break;
             case 'q':
                 toggleQuestion();
+                break;
+            case 'r':
+                resetPot();
                 break;
             case ' ':
                 // Prevent scrolling with Space
