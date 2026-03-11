@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div id="game-container">
         <!-- Header: Scores -->
@@ -15,7 +17,7 @@
                 <h2 id="team1-name" contenteditable="true" title="İsmi değiştirmek için tıklayın">A Takımı</h2>
                 <div class="score" id="team1-score">0</div>
             </div>
-            
+
             <div class="pot-container">
                 <div class="ramadan-badge">🌙 Ramazan Özel ✨</div>
                 <h2>ORTAK KASA</h2>
@@ -51,9 +53,11 @@
                     <button id="btn-award-team2" class="award">KASAYI TAKIM 2'YE AKTAR</button>
                     <button id="btn-next-question" class="next">Sonraki Soru </button>
                     <button id="btn-clear-strikes" class="warning">Çarpıları Sıfırla</button>
+                    <button id="btn-reset-pot" class="warning">KASAYI TEMİZLE</button>
 
                 </div>
-                <p class="help-text">Kısayollar: [1, 2, 3] = Çarpı Göster | [Boşluk] = Kapat/Aç | [N] = Sonraki Soru | [Q] = Soruyu Göster/Gizle | [TAB] = Paneli Gizle/Göster</p>
+                <p class="help-text">Kısayollar: [1, 2, 3] = Çarpı Göster | [Boşluk] = Kapat/Aç | [N] = Sonraki Soru |
+                    [Q] = Soruyu Göster/Gizle | [TAB] = Paneli Gizle/Göster</p>
             </div>
         </footer>
 
@@ -67,4 +71,5 @@
 
     <script type="module" src="script.js"></script>
 </body>
+
 </html>

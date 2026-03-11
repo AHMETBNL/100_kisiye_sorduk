@@ -84,6 +84,7 @@ const btnAwardTeam1 = document.getElementById('btn-award-team1');
 const btnAwardTeam2 = document.getElementById('btn-award-team2');
 const btnClearStrikes = document.getElementById('btn-clear-strikes');
 const btnToggleQuestion = document.getElementById('btn-toggle-question');
+const btnResetPot = document.getElementById('btn-reset-pot');
 const elControlsPanel = document.getElementById('controls');
 
 
@@ -256,6 +257,7 @@ function setupEventListeners() {
     btnStrike.addEventListener('click', addStrike);
     btnClearStrikes.addEventListener('click', resetStrikes);
     btnToggleQuestion.addEventListener('click', toggleQuestion);
+    btnResetPot.addEventListener('click', resetPot);
 
     btnAwardTeam1.addEventListener('click', () => awardPotTo(1));
     btnAwardTeam2.addEventListener('click', () => awardPotTo(2));
